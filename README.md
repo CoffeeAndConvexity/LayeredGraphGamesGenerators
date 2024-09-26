@@ -1,6 +1,6 @@
 # Layered Graph Security Games Generators
 
-This repository contains Python scripts for generating and simulating three types of security games played on layered graphs, as introduced in our paper. Each script can operate on synthetic grid worlds or real-world maps generated using the `osmnx` library. The games described include Pursuit-Evasion (PE), Anti-Terrorism (AT), and Logistical Interdiction (LI)/Persistent Threats (PT) games. Below is a description of the games and their respective generators.
+This repository contains Python scripts for generating three types of security games played on layered graphs (and their conversion to normal form), as introduced in our paper. Each script can operate on synthetic grid worlds or real-world maps generated using the `osmnx` library. The games described include Pursuit-Evasion (PE), Anti-Terrorism (AT), and Logistical Interdiction (LI)/Persistent Threats (PT) games. Below is a description of the games and their respective generators.
 
 ## Games
 
