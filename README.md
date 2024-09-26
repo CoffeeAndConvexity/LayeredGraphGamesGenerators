@@ -1,18 +1,18 @@
 # Layered Graph Security Games Generators
 
-This repository contains Python scripts for generating and simulating three types of security games played on layered graphs, as introduced in our paper. Each script can operate on synthetic grid worlds or real-world maps generated using the `osmnx` library. The games described include Pursuit-Evasion (PE), Anti-Terrorism (AT), and Logistical Interdiction (LI)/Persistent Threats (PT) games. Below is a description of the games and their respective scripts.
+This repository contains Python scripts for generating and simulating three types of security games played on layered graphs, as introduced in our paper. Each script can operate on synthetic grid worlds or real-world maps generated using the `osmnx` library. The games described include Pursuit-Evasion (PE), Anti-Terrorism (AT), and Logistical Interdiction (LI)/Persistent Threats (PT) games. Below is a description of the games and their respective generators.
 
-## Game Types
+## Games
 
 ### 1. **Pursuit-Evasion (PE)**
-The simplest of the game types, the Pursuit-Evasion (PE) game models a finite-horizon scenario where a defender (pursuer) attempts to capture an attacker (evader) within a graph. Players start at specific vertices, and at each timestep, they select an edge to traverse (loops are allowed). The game ends if both players share the same vertex simultaneously. 
+The simplest of the implemented games, the Pursuit-Evasion (PE) game models a finite-horizon scenario where a defender (pursuer) attempts to capture an attacker (evader) within a graph. Players start at specific vertices, and at each timestep, they select an edge to traverse (loops are allowed). The game ends if both players share the same vertex simultaneously. 
 Key features:
 - Attacker aims to evade capture.
 - Defender aims to intercept the attacker by sharing the same vertex.
 - The interdiction function can vary, such as interdiction occurring on the same edge or based on physical proximity.
 
 ### 2. **Anti-Terrorism (AT)**
-An extension of PE games, the Anti-Terrorism (AT) game introduces the concept of a terrorist (attacker) aiming to plant an explosive device at a target node. The attacker must stay at the target vertex for a set time (`T_setup`) to successfully detonate the explosive, all while evading capture by the defender. The interdiction rules are similar to PE but involve additional complexity due to waiting times and setup phases.
+An extension of PE games, the Anti-Terrorism (AT) game introduces the concept of a terrorist (attacker) aiming to plant an explosive device at a target node. The attacker must stay at the target vertex for a set time to successfully detonate the explosive, all while evading capture by the defender. The interdiction rules are similar to PE but involve additional complexity due to waiting times and setup phases.
 Key features:
 - The attacker must complete a setup phase to plant an explosive at a target node.
 - The game uses layered graphs to model the attacker's waiting time and movement.
@@ -33,7 +33,7 @@ This game type modifies PE games by introducing exit vertices that allow the att
 
 ## Real-World Map Support
 
-Each script supports the use of real-world maps via the `osmnx` library. This feature allows users to simulate the games on real urban environments, enhancing the applicability of the models. The maps are converted into graph representations, where nodes represent intersections or important locations, and edges represent roads or pathways.
+Each generator supports the use of real-world maps via the `osmnx` library. This feature allows users to simulate the games on real urban environments. The maps are converted into graph representations, where nodes represent intersections or important locations, and edges represent roads or pathways.
 
 ## Dependencies
 
@@ -51,15 +51,22 @@ Each script supports the use of real-world maps via the `osmnx` library. This fe
 
 If you use this repository, please cite our paper:
 
-Cerny, Jakub, Chun Kai Ling, Christian Kroer, and Garud Iyengar. "Layered Graph Security Games." *arXiv preprint arXiv:2405.03070* (2024).
+Jakub Cerny, Chun Kai Ling, Christian Kroer and Garud Iyengar. "Layered Graph Security Games." *IJCAI'24* and *arXiv preprint arXiv:2405.03070* (2024).
 
 ```bibtex
-@article{vcerny2024layered,
-  title={Layered Graph Security Games},
-  author={{\v{C}}ern{\`y}, Jakub and Ling, Chun Kai and Kroer, Christian and Iyengar, Garud},
-  journal={arXiv preprint arXiv:2405.03070},
-  year={2024}
+@inproceedings{cerny2024lgsg,
+  title     = {Layered Graph Security Games},
+  author    = {Cerny, Jakub and Ling, Chun Kai and Kroer, Christian and Iyengar, Garud},
+  booktitle = {Proceedings of the Thirty-Third International Joint Conference on
+               Artificial Intelligence, {IJCAI-24}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Kate Larson},
+  pages     = {2695--2703},
+  year      = {2024},
+  month     = {8},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2024/298},
+  url       = {https://doi.org/10.24963/ijcai.2024/298},
 }
-```
-```
 
+```
