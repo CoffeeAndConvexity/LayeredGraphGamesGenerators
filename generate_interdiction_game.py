@@ -19,7 +19,7 @@ def path_clash(game, p_atk, p_def):
     return clash
 
 ################################################
-# Game depth and randomization seed
+# Game depth, delay factor and randomization seed
 ################################################
 
 depth = 5
@@ -76,7 +76,7 @@ world_def.draw_annotated_map(defender_points = start_def)
 
 
 ################################################
-# Create the binary pursuit game
+# Create the interdiction game
 ################################################
 clg = StarvationGame(nx_graph_atk, nx_graph_atk, start_atk, start_def, is_target, depth, rescaled_delayed_payoffs, 'share_dst_vertex')
 

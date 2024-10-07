@@ -19,7 +19,7 @@ def path_clash(game, p_atk, p_def):
     return clash
 
 ################################################
-# Game depth and randomization seed
+# Game depth, bomb-planting / poaching time and randomization seed
 ################################################
 
 depth = 5
@@ -69,7 +69,7 @@ world_def.draw_annotated_map(defender_points = start_def)
 
 
 ################################################
-# Create the binary pursuit game
+# Create the anti-terrorism game
 ################################################
 clg = BombPlantingGame(nx_graph_atk, nx_graph_atk, start_atk, start_def, target_values, depth, poaching_time, 'share_dst_vertex')
 
